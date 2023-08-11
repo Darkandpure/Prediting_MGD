@@ -57,9 +57,10 @@
         var monthMGDSums = {};
         var monthCounts = {};
         sortedMonths.forEach((month, index) => {
-           if (!monthMGDSums[month]) {
-              monthMGDSums[month] = 0;
-              monthCounts[month] = 0;
+
+            if (!monthMGDSums[month]) {
+                monthMGDSums[month] = 0;
+                monthCounts[month] = 0;
             }
             monthMGDSums[month] += sortedMGDs[index];
             monthCounts[month]++;
@@ -85,9 +86,10 @@
 
         layout.title = 'Monthly Variation of Water Usage (MGD) in Miami, USA';
         layout.xaxis = {
-           title: 'Month',
-           type: 'category'  // this specifies the x-axis as categorical
-        };
+            title: 'Month',
+            type: 'category'
+              // this specifies the x-axis as categorical
+            };
 
         Plotly.newPlot('month_vs_mgd', [month_vs_mgd_trace], layout);
     </script>
