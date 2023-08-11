@@ -20,7 +20,7 @@ This project utilizes machine learning to predict water usage (in MGD) for Miami
 ## Getting Started:
 1. **Clone the Repository**
     ```
-    git clone 'https://github.com/Darkandpure/Prediting_MGD/blob/master/README.md'
+    git clone 'https://github.com/Darkandpure/Prediting_MGD'
 
     ```
 
