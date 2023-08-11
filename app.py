@@ -1,6 +1,7 @@
 from flask import Flask, request, render_template
 from joblib import load
 import pandas as pd
+import os
 
 
 app = Flask(__name__)
@@ -18,7 +19,7 @@ def upload_file():
     file = request.files["file"]
     if file:
         # Read the CSV file
-        df = pd.read_csv(file)
+        df = pd.read_json(file)
 
         # Make predictions
         predictions = model.predict(df)
