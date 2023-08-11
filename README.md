@@ -7,13 +7,15 @@ This project utilizes machine learning to predict water usage (in MGD) for Miami
 - Visualizes data using Plotly.js.
 - Deployment-ready for Google Cloud Run.
 - Accepts data from Firebase via HTTP requests.
+- Docker support for containerization.
 
 ## Prerequisites:
 1. Python 3.x
 2. Flask
 3. Sklearn
 4. Pandas
-5. Google Cloud SDK (for deployment)
+5. Docker
+6. Google Cloud SDK (for deployment)
 
 ## Getting Started:
 1. **Clone the Repository**
@@ -41,7 +43,21 @@ This project utilizes machine learning to predict water usage (in MGD) for Miami
 
    Visit `http://127.0.0.1:5000` in your browser to access the app.
 
-5. **Deploying to Google Cloud Run**
+5. **Using Docker:**
+
+    - **Build the Docker Image**
+        ```
+        docker build -t predicting_mgd .
+        ```
+
+    - **Run the App Inside a Docker Container**
+        ```
+        docker run -p 5000:5000 predicting_mgd
+        ```
+
+    Visit `http://127.0.0.1:5000` in your browser to access the app.
+
+6. **Deploying to Google Cloud Run**
     Before deploying, ensure you have the Google Cloud SDK set up and authenticated. Deploy the app using:
 
     ```
@@ -56,3 +72,4 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 
 ## License:
 [MIT](https://choosealicense.com/licenses/mit/)
+
