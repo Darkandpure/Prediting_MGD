@@ -8,10 +8,6 @@ app = Flask(__name__)
 # Load the Random Forest model
 model = load("random_forest_model.joblib")
 
-@app.route("/")
-def index():
-    return render_template("index.html")
-
 @app.route("/upload", methods=["POST"])
 def upload_file():
     file = request.files["file"]
@@ -26,7 +22,6 @@ def upload_file():
         predictions_list = predictions.tolist()
 
         # Return the predictions as a JSON response
-        return jsonify({"MGD": predictions_list})
+        return jsonify({"mgd_predictions": predictions_list})
 
-if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000, debug=False)
+    return jsonify({"error": "No file uploaded"}), 400
